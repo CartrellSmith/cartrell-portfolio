@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export function useFetch(url) {
   const [data, setData] = useState(null);
@@ -6,27 +6,36 @@ export function useFetch(url) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    let isMounted = true;
-    setIsLoading(true);
-    setError(null);
+    let isMounted = true; // prevents state updates after unmount
 
-    fetch(url)
-      .then(res => {
-        if (!res.ok) throw new Error('Network error');
-        return res.json();
-      })
-      .then(json => {
+    async function fetchData() {
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const json = await response.json();
+
         if (isMounted) {
           setData(json);
-          setIsLoading(false);
         }
-      })
-      .catch(err => {
+      } catch (err) {
         if (isMounted) {
           setError(err.message);
+        }
+      } finally {
+        if (isMounted) {
           setIsLoading(false);
         }
-      });
+      }
+    }
+
+    fetchData();
 
     return () => {
       isMounted = false;

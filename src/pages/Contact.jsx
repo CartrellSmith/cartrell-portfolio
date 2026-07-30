@@ -1,55 +1,23 @@
 import { useState } from "react";
 
 function Contact() {
-  const [formValues, setFormValues] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const [errors, setErrors] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  const validateField = (name, value) => {
-    if (!value.trim()) return "This field is required.";
-
-    if (name === "email" && !emailRegex.test(value)) {
-      return "Please enter a valid email.";
-    }
-
-    if (name === "message" && value.length < 20) {
-      return "Message must be at least 20 characters.";
-    }
-
-    return "";
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setFormValues((prev) => ({ ...prev, [name]: value }));
-
-    setErrors((prev) => ({
-      ...prev,
-      [name]: validateField(name, value),
-    }));
-  };
+  const isValidName = name.trim().length >= 2;
+  const isValidEmail = email.includes("@") && email.includes(".");
+  const isValidMessage = message.trim().length >= 10;
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newErrors = {};
-    Object.entries(formValues).forEach(([key, value]) => {
-      newErrors[key] = validateField(key, value);
-    });
-
-    setErrors(newErrors);
-
-    const hasError = Object.values(newErrors).some((msg) => msg);
-    if (!hasError) {
-      setIsSubmitted(true);
+    if (isValidName && isValidEmail && isValidMessage) {
+      setSubmitted(true);
+      document.getElementById("form-feedback").textContent =
+        "Your message has been sent successfully.";
     }
   };
 
@@ -57,61 +25,62 @@ function Contact() {
     <section className="contact-page">
       <h2 className="section-title">Contact Me</h2>
 
-      <p className="section-subtitle">
-        “Speak the truth in love.” — Ephesians 4:15
-      </p>
+      <form className="contact-form" onSubmit={handleSubmit} noValidate>
+        {/* Live region for screen readers */}
+        <div id="form-feedback" aria-live="polite" className="sr-only"></div>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <label>
-          Name
-          <input
-            name="name"
-            value={formValues.name}
-            onChange={handleChange}
-            className={errors.name ? "input-error" : ""}
-          />
-          {errors.name && <span className="error">{errors.name}</span>}
-        </label>
+        {/* Name Field */}
+        <label htmlFor="name">Name</label>
+        <input
+          id="name"
+          aria-required="true"
+          aria-invalid={!isValidName}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        {!isValidName && (
+          <span className="input-error" role="alert">
+            Name must be at least 2 characters.
+          </span>
+        )}
 
-        <label>
-          Email
-          <input
-            name="email"
-            value={formValues.email}
-            onChange={handleChange}
-            className={errors.email ? "input-error" : ""}
-          />
-          {errors.email && <span className="error">{errors.email}</span>}
-        </label>
+        {/* Email Field */}
+        <label htmlFor="email">Email</label>
+        <input
+          id="email"
+          aria-required="true"
+          aria-invalid={!isValidEmail}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        {!isValidEmail && (
+          <span className="input-error" role="alert">
+            Please enter a valid email address.
+          </span>
+        )}
 
-        <label>
-          Message
-          <textarea
-            name="message"
-            value={formValues.message}
-            onChange={handleChange}
-            className={errors.message ? "input-error" : ""}
-            rows="5"
-          />
-          {errors.message && <span className="error">{errors.message}</span>}
-        </label>
+        {/* Message Field */}
+        <label htmlFor="message">Message</label>
+        <textarea
+          id="message"
+          aria-required="true"
+          aria-invalid={!isValidMessage}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+        {!isValidMessage && (
+          <span className="input-error" role="alert">
+            Message must be at least 10 characters.
+          </span>
+        )}
 
-        <button
-          type="submit"
-          className="contact-btn"
-          disabled={
-            !formValues.name ||
-            !formValues.email ||
-            !formValues.message ||
-            Object.values(errors).some((msg) => msg)
-          }
-        >
+        <button type="submit" className="contact-btn">
           Send Message
         </button>
 
-        {isSubmitted && (
-          <p className="success-message">
-            Thank you for reaching out! I’ll respond soon.
+        {submitted && (
+          <p className="form-success" aria-live="polite">
+            Thank you! I’ll respond soon.
           </p>
         )}
       </form>

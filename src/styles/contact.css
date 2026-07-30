@@ -73,6 +73,30 @@
   font-weight: 600;
 }
 
+.input-error {
+  color: #d9534f;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-btn:focus {
+  outline: 3px solid var(--blue-accent);
+  outline-offset: 2px;
+}
+
+.form-success {
+  margin-top: 1rem;
+  color: var(--blue-accent);
+  font-weight: 600;
+}
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+}
+
 @media (max-width: 768px) {
   .contact-form {
     padding: 1.5rem;

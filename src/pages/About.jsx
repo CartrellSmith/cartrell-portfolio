@@ -10,7 +10,7 @@ function About() {
       <div className="about-content">
         <div className="about-left">
           <img
-            src="src/assets/about_page.jpeg"
+            src="/assets/about_page.jpeg"
             alt="Cartrell Smith"
             className="about-image"
           />

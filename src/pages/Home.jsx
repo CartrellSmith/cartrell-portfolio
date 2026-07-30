@@ -27,7 +27,7 @@ function Home() {
       <div className="hero-right">
         <div className="hero-image-wrapper">
           <img
-            src="src/assets/home_page.jpeg"
+            src="/assets/home_page.jpeg"
             alt="Cartrell Smith"
             className="hero-image"
           />

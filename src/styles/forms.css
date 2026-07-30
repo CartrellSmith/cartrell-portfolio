@@ -1,0 +1,18 @@
+.contact-form {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.8rem;
+}

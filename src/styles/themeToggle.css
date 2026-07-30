@@ -1,0 +1,31 @@
+.theme-toggle {
+  background: var(--blue-dark);
+  border: 2px solid var(--gold);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--gold);
+  color: var(--blue-dark);
+}
+
+.toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .toggle-icon {
+  transform: rotate(20deg);
+}
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    padding: 0.3rem 0.7rem;
+    font-size: 1rem;
+  }
+}

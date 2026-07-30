@@ -1,0 +1,30 @@
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #111827;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+:root[data-theme="light"] {
+  --blue-dark: #1E3A8A;
+  --blue-accent: #3B82F6;
+  --gold: #D4AF37;
+  --text-main: #1F2937;
+  --bg-main: #F3F4F6;
+}
+
+:root[data-theme="dark"] {
+  --blue-dark: #0F172A;
+  --blue-accent: #60A5FA;
+  --gold: #D4AF37;
+  --text-main: #E5E7EB;
+  --bg-main: #0F172A;
+}

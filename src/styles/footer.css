@@ -1,0 +1,37 @@
+.site-footer {
+  background: var(--blue-dark);
+  color: white;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 4px solid var(--gold);
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.footer-scripture {
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1.5rem;
+  }
+}

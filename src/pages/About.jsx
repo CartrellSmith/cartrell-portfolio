@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function About() {
   return (
     <section className="about-page">
@@ -40,9 +42,9 @@ function About() {
             build things that uplift people and glorify God.
           </p>
 
-          <a href="/contact" className="about-btn">
+          <Link to="/contact" className="about-btn">
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </section>

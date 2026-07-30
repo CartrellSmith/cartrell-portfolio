@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <section className="home-hero">
@@ -14,14 +16,13 @@ function Home() {
           “Let your light shine before others…” — Matthew 5:16
         </p>
 
-        <div className="hero-buttons">
-          <a href="/projects" className="hero-btn-primary">
-            View My Work
-          </a>
-          <a href="/contact" className="hero-btn-secondary">
-            Contact Me
-          </a>
-        </div>
+        <Link to="/projects" className="hero-btn-primary">
+          View My Work
+        </Link>
+
+        <Link to="/contact" className="hero-btn-secondary">
+          Contact Me
+        </Link>
       </div>
 
       <div className="hero-right">

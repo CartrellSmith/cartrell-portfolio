@@ -15,6 +15,7 @@ function Home() {
         <p className="hero-scripture">
           “Let your light shine before others…” — Matthew 5:16
         </p>
+
         <div className="hero-buttons">
           <Link to="/projects" className="hero-btn-primary">
             View My Work

@@ -4,7 +4,6 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
   const [submitted, setSubmitted] = useState(false);
 
   const isValidName = name.trim().length >= 2;
@@ -16,8 +15,6 @@ function Contact() {
 
     if (isValidName && isValidEmail && isValidMessage) {
       setSubmitted(true);
-      document.getElementById("form-feedback").textContent =
-        "Your message has been sent successfully.";
     }
   };
 
@@ -25,10 +22,12 @@ function Contact() {
     <section className="contact-page">
       <h2 className="section-title">Contact Me</h2>
 
-      <form className="contact-form" onSubmit={handleSubmit} noValidate>
-        {/* Live region for screen readers */}
-        <div id="form-feedback" aria-live="polite" className="sr-only"></div>
+      {/* ARIA live region for screen readers */}
+      <div id="form-feedback" aria-live="polite" className="sr-only">
+        {submitted && "Your message has been sent successfully."}
+      </div>
 
+      <form className="contact-form" onSubmit={handleSubmit} noValidate>
         {/* Name Field */}
         <label htmlFor="name">Name</label>
         <input

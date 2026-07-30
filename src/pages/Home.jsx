@@ -15,14 +15,15 @@ function Home() {
         <p className="hero-scripture">
           “Let your light shine before others…” — Matthew 5:16
         </p>
+        <div className="hero-buttons">
+          <Link to="/projects" className="hero-btn-primary">
+            View My Work
+          </Link>
 
-        <Link to="/projects" className="hero-btn-primary">
-          View My Work
-        </Link>
-
-        <Link to="/contact" className="hero-btn-secondary">
-          Contact Me
-        </Link>
+          <Link to="/contact" className="hero-btn-secondary">
+            Contact Me
+          </Link>
+        </div>
       </div>
 
       <div className="hero-right">

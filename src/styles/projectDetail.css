@@ -30,7 +30,7 @@
 .project-detail-desc {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
-  color: var(--text-main);
+  color: var(--blue-accent);
 }
 
 .project-detail-info p {

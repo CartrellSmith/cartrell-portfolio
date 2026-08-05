@@ -9,9 +9,12 @@ function Projects() {
   const { data, isLoading, error } = useFetch(GITHUB_URL);
 
   const filtered =
-    data?.filter(repo =>
-      repo.name.toLowerCase().includes(searchTerm.toLowerCase())
-    ) ?? [];
+    data
+      ?.filter(repo =>
+        repo.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      .filter(repo => repo.name.toLowerCase() !== "gittest") // NEW
+    ?? [];
 
   return (
     <section className="projects-page">

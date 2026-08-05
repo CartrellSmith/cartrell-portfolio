@@ -7,7 +7,8 @@ function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const isValidName = name.trim().length >= 2;
-  const isValidEmail = email.includes("@") && email.includes(".");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const isValidEmail = emailRegex.test(email);
   const isValidMessage = message.trim().length >= 10;
 
   const handleSubmit = (e) => {
@@ -54,7 +55,7 @@ function Contact() {
         />
         {!isValidEmail && (
           <span className="input-error" role="alert">
-            Please enter a valid email address.
+            Please enter a valid email (example: name@example.com).
           </span>
         )}
 

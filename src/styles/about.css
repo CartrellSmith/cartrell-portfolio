@@ -69,7 +69,7 @@
   color: var(--blue-dark);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 320px) {
   .about-content {
     flex-direction: column;
     text-align: center;

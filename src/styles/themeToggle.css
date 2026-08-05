@@ -23,7 +23,7 @@
   transform: rotate(20deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 320px) {
   .theme-toggle {
     padding: 0.3rem 0.7rem;
     font-size: 1rem;

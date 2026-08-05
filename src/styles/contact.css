@@ -97,7 +97,7 @@
   left: -9999px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 320px) {
   .contact-form {
     padding: 1.5rem;
   }

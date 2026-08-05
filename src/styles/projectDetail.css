@@ -93,7 +93,7 @@
   background: var(--blue-dark);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 320px) {
   .project-detail-card {
     padding: 1.5rem;
   }

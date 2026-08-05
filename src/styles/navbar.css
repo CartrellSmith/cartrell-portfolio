@@ -1,13 +1,26 @@
+.app {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+main {
+  padding: 0;
+  margin: 0;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  margin: 0;
   padding: 1rem 2rem;
   background: var(--blue-dark);
   color: white;
   position: sticky;
   top: 0;
   z-index: 50;
+  box-sizing: border-box;
 }
 
 .nav-logo {
@@ -58,6 +71,9 @@
   }
 
   .navbar {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;;
     flex-direction: column;
     text-align: center;
     gap: 1rem;

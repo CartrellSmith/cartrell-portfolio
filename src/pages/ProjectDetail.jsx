@@ -36,15 +36,41 @@ function ProjectDetail() {
           <p><strong>Open Issues:</strong> {data.open_issues_count}</p>
         </div>
 
-        <a
-          href={data.html_url}
-          target="_blank"
-          rel="noreferrer"
-          className="project-detail-btn"
-        >
-          View on GitHub
-        </a>
+        <div className="project-detail-actions">
+
+          {/* Live Demo Button (only if homepage exists) */}
+          {data.homepage && (
+            <a
+              href={data.homepage}
+              target="_blank"
+              rel="noreferrer"
+              className="project-detail-btn live-demo-btn"
+            >
+              Live Demo
+            </a>
+          )}
+
+          {/* GitHub Button */}
+          <a
+            href={data.html_url}
+            target="_blank"
+            rel="noreferrer"
+            className="project-detail-btn github-btn"
+          >
+            View on GitHub
+          </a>
+
+          {/* Back Button */}
+          <a
+            href="/projects"
+            className="project-detail-btn back-btn"
+          >
+            ← Back to Projects
+          </a>
+
+        </div>
       </div>
+
     </section>
   );
 }

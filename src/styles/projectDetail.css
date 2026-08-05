@@ -53,6 +53,46 @@
   color: var(--blue-dark);
 }
 
+.project-detail-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.project-detail-btn {
+  background: var(--blue-dark);
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.project-detail-btn:hover {
+  background: var(--gold);
+  color: black;
+}
+
+.live-demo-btn {
+  background: var(--gold);
+  color: black;
+}
+
+.live-demo-btn:hover {
+  background: var(--blue-dark);
+  color: white;
+}
+
+.back-btn {
+  background: #444;
+}
+
+.back-btn:hover {
+  background: var(--blue-dark);
+}
+
 @media (max-width: 768px) {
   .project-detail-card {
     padding: 1.5rem;

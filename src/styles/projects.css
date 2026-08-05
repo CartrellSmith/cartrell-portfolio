@@ -78,8 +78,16 @@
   color: var(--blue-dark);
 }
 
-@media (max-width: 320px) {
-  .projects-search {
-    max-width: 100%;
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .project-card {
+    width: 100%;
+    box-sizing: border-box;
   }
 }

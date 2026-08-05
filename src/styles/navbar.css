@@ -65,17 +65,21 @@ main {
   align-items: center;
 }
 
-@media (max-width: 320px) {
-  .nav-links {
-    gap: 1rem;
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    min-height: 90px;
+    width: 100%;
   }
 
-  .navbar {
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;;
+  .nav-links {
     flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
     text-align: center;
-    gap: 0.8rem 1rem;
   }
 }

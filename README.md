@@ -5,16 +5,6 @@ This project showcases my work as a **Frontend Engineer**, **Youth Pastor**, and
 
 ---
 
-## 🚀 Live Demo
-(Will be added after Vercel deployment)
-
----
-
-## 📸 Screenshot
-(Add your Home page screenshot here after deployment)
-
----
-
 ## 🧠 About the Project
 This portfolio was built to highlight my journey as a software developer and community leader.  
 It includes:
@@ -91,6 +81,27 @@ npm run dev
 
 # Build for production
 npm run build
+
+## 🧪 Self‑Audit Confirmation
+
+As part of production readiness testing, the application was manually audited to ensure stability, accessibility, and performance. The following items were verified:
+
+- [x] **Zero console errors** during navigation, form submission, routing, and API fetching.
+- [x] **Zero infinite re-render loops** across all components, including:
+  - `Projects.jsx` (GitHub API fetch + search filtering)
+  - `ProjectDetail.jsx` (dynamic route + repository fetch)
+  - `Contact.jsx` (controlled inputs + validation + ARIA live region)
+- [x] **All API requests resolve cleanly** with proper loading and error states.
+- [x] **All pages render without layout shifts** or unexpected white borders.
+- [x] **All interactive elements pass accessibility checks**, including:
+  - ARIA live regions  
+  - Inline validation  
+  - Keyboard navigation  
+  - Focus outlines  
+- [x] **Production build tested on Vercel** with no warnings or hydration mismatches.
+
+This audit confirms the application is stable, accessible, and ready for production deployment.
+
 
 📬 Contact
 

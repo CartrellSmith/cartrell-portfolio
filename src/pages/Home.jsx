@@ -32,6 +32,7 @@ function Home() {
           <img
             src="/assets/home_page.jpeg"
             alt="Cartrell Smith"
+            loading="lazy"
             className="hero-image"
           />
           <div className="hero-overlay"></div>

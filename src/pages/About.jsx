@@ -14,6 +14,7 @@ function About() {
           <img
             src="/assets/about_page.jpeg"
             alt="Cartrell Smith"
+            loading="lazy"
             className="about-image"
           />
         </div>
